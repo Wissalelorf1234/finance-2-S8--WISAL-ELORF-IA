@@ -1,0 +1,123 @@
+ :
+
+---
+
+  Prédiction de la Volatilité des Actions Cotées
+
+## 1. Introduction
+
+La volatilité des actions est une mesure clé du risque sur les marchés financiers. Elle indique l’ampleur des variations de prix d’une action sur une période donnée. Prédire la volatilité permet aux investisseurs et gestionnaires de portefeuille de mieux anticiper les risques et de prendre des décisions éclairées.
+
+Objectif de ce rapport :
+
+* Fournir une analyse des données historiques des actions cotées.
+* Prédire la volatilité future à l’aide de modèles de régression.
+* Fournir des indicateurs techniques et graphiques pour appuyer l’analyse.
+
+---
+
+## 2. Données utilisées
+
+* **Source :** Yahoo Finance, historique des actions.
+* **Période :** 2018 - 2025
+* **Variables :**
+
+  * Date
+  * Open, High, Low, Close
+  * Volume
+  * Volatilité historique (calculée par écart-type des rendements)
+
+Exemple d’échantillon :
+
+| Date       | Open   | High   | Low    | Close  | Volume    | Volatilité |
+| ---------- | ------ | ------ | ------ | ------ | --------- | ---------- |
+| 2025-01-02 | 150.00 | 152.50 | 148.00 | 151.00 | 1,200,000 | 0.015      |
+| 2025-01-03 | 151.00 | 153.00 | 149.50 | 150.50 | 1,100,000 | 0.014      |
+
+---
+
+## 3. Méthodologie
+
+1. **Prétraitement des données :**
+
+   * Remplissage des valeurs manquantes
+   * Calcul de la volatilité historique sur une fenêtre mobile de 20 jours
+
+2. **Modélisation :**
+
+   * Modèle utilisé : Régression linéaire et/ou régression Ridge
+   * Variables explicatives : Open, High, Low, Close, Volume
+   * Variable cible : Volatilité future
+
+3. **Validation du modèle :**
+
+   * Séparation en données d’entraînement (80%) et test (20%)
+   * Mesure de performance : RMSE, R²
+
+---
+
+## 4. Prédictions
+
+* La volatilité prévue pour les 30 prochains jours est calculée par le modèle de régression.
+* Exemple de prédiction :
+
+| Date       | Volatilité prévue |
+| ---------- | ----------------- |
+| 2026-03-18 | 0.016             |
+| 2026-03-19 | 0.017             |
+| 2026-03-20 | 0.015             |
+
+---
+
+## 5. Analyse technique
+
+### 5.1 Moyenne mobile
+
+* Moyenne mobile de la volatilité sur 20 jours pour lisser les fluctuations.
+
+### 5.2 Bollinger Bands
+
+* Bandes supérieures et inférieures à 2 écarts-types autour de la moyenne mobile.
+* Permet de détecter les périodes de forte volatilité.
+
+### 5.3 RSI (Relative Strength Index)
+
+* Indique si l’action est surachetée ou survendue sur la base de la volatilité.
+
+---
+
+## 6. Graphiques
+
+* **Volatilité historique vs prédite**
+* **Bollinger Bands sur la volatilité**
+* **RSI de volatilité**
+
+*(Ces graphiques peuvent être générés avec Python et matplotlib/seaborn)*
+
+---
+
+## 7. Interprétation
+
+* Une volatilité en hausse indique un risque accru et des variations de prix importantes.
+* Une volatilité stable ou faible suggère un marché plus calme et prévisible.
+* Les indicateurs techniques permettent de détecter les tendances et les anomalies potentielles.
+
+---
+
+## 8. Limites
+
+* Les modèles de régression ne capturent pas les événements extrêmes (crises, annonces inattendues).
+* La volatilité future peut être affectée par des facteurs externes non inclus dans les données historiques.
+* L’horizon de prédiction est limité : plus on s’éloigne dans le temps, plus la précision diminue.
+
+---
+
+## 9. Conclusion
+
+La prédiction de la volatilité est un outil utile pour la gestion du risque et la planification des investissements. En combinant modèles statistiques et indicateurs techniques, il est possible d’anticiper les mouvements du marché et d’adapter sa stratégie.
+
+---
+
+Si tu veux, je peux te **générer directement le code Python complet** qui lit un fichier CSV d’actions, calcule la volatilité, fait les prédictions par régression, et produit **tous les graphiques et indicateurs techniques automatiquement**, prêt à copier-coller dans Google Colab.
+
+Veux‑tu que je fasse ça ?
